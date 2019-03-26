@@ -2,12 +2,10 @@ package com.waether.app.features.randomizer
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.weatherapp.usecases.Ticker
-import com.weatherapp.usecases.numberIncrementer
-import com.weatherapp.usecases.randomNumberGenerator
+import com.weatherapp.domain.usecases.numberIncrementer
 
 
- const val DEFAULT_VALUE = 0
+const val DEFAULT_VALUE = 0
 
 class RandomizerViewModel : ViewModel() {
 
@@ -23,7 +21,7 @@ class RandomizerViewModel : ViewModel() {
 
 
     fun incrementNumber(){
-        numberIncrementer( numberLiveData)
+        numberIncrementer(numberLiveData)
 
     }
 
