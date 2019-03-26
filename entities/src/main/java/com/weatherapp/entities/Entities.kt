@@ -4,6 +4,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import android.support.annotation.NonNull
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 @Entity
 data class FavoriteCityId(@field:PrimaryKey @field:NonNull val id: Long) 
@@ -14,7 +15,7 @@ data class City(
     @field:SerializedName("id") val id: Long,
     @field:SerializedName("name") val name: String?,
     @field:SerializedName("country") val country: String?,
-    @field:SerializedName("coord") val coordinates: Coordinates?)
+    @field:SerializedName("coord") val coordinates: Coordinates?) : Serializable
 data class Wind(
     @field:SerializedName("deg") val degree: Double?,
     @field:SerializedName("speed") val speed: Double?)
@@ -27,7 +28,7 @@ data class Snow(@field:SerializedName("3h") val volumeForLastThreeHours: Double?
 data class Clouds(@field:SerializedName("all") val cloudiness: Long?)
 data class Coordinates(
     @field:SerializedName("lat") val latitude: Double?,
-    @field:SerializedName("lon") val longitude: Double?)
+    @field:SerializedName("lon") val longitude: Double?) : Serializable
 data class Forecast(
     @field:SerializedName("clouds") val clouds: Clouds?,
     @field:SerializedName("dt") val date: Long?,
